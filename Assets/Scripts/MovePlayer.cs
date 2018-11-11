@@ -50,16 +50,16 @@ public class MovePlayer : MonoBehaviour
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         rigidbody.AddForce(movement * speed);
 
-        if (Mathf.Abs(transform.localScale.x - moveHorizontal) > 1)//flip the image
-        {
-            transform.localScale *= new Vector2(-1,1);
-        }
-
         //handle which sprite to use
         int which = Mathf.Abs(rigidbody.velocity.x) > Mathf.Abs(rigidbody.velocity.y) ? 0 : (rigidbody.velocity.y < 0) ? 1 : 2;
         float higherSpeed = which == 0 ? moveHorizontal : moveVertical;
 
-        if(Mathf.Abs(higherSpeed) < .5)
+        if (Mathf.Abs(transform.localScale.x - moveHorizontal) > 1 && which == 0)//flip the image if needed
+        {
+            transform.localScale *= new Vector2(-1, 1);
+        }
+
+        if (Mathf.Abs(higherSpeed) < .5)
         {
             //go back to idle
             if (renderer.sprite != idleForward && renderer.sprite != idleSide) {
