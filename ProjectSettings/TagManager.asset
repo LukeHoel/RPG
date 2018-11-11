@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ExtraColliders
+    uniqueID: 772443875
+    locked: 0
   - name: Floor
     uniqueID: 2984342861
     locked: 0
@@ -49,4 +52,7 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 437732201
+    locked: 0
+  - name: Cosmetic Top Layer
+    uniqueID: 223174975
     locked: 0

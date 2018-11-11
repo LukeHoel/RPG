@@ -22,8 +22,8 @@ public class MovePlayer : MonoBehaviour
 
     public int stepSpeed = 15;
 
-    private Rigidbody2D rigidbody;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
-    private SpriteRenderer renderer;
+    private new Rigidbody2D rigidbody;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
+    private new SpriteRenderer renderer;
     private int walkNum = 0;
     private int walkChangeCounter = 0;
 
