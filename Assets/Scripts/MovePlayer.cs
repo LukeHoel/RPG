@@ -9,12 +9,16 @@ public class MovePlayer : MonoBehaviour
 
     public Sprite idleForward;
     public Sprite idleSide;
+    public Sprite idleBackward;
 
     public Sprite walkForward1;
     public Sprite walkForward2;
 
     public Sprite walkSide1;
     public Sprite walkSide2;
+
+    public Sprite walkBackward1;
+    public Sprite walkBackward2;
 
     public int stepSpeed = 15;
 
@@ -52,13 +56,14 @@ public class MovePlayer : MonoBehaviour
         }
 
         //handle which sprite to use
-        int which = Mathf.Abs(rigidbody.velocity.x) > Mathf.Abs(rigidbody.velocity.y) ? 0 : 1;
+        int which = Mathf.Abs(rigidbody.velocity.x) > Mathf.Abs(rigidbody.velocity.y) ? 0 : (rigidbody.velocity.y < 0) ? 1 : 2;
         float higherSpeed = which == 0 ? moveHorizontal : moveVertical;
 
         if(Mathf.Abs(higherSpeed) < .5)
         {
+            //go back to idle
             if (renderer.sprite != idleForward && renderer.sprite != idleSide) {
-                renderer.sprite = which == 0 ? idleSide : idleForward;
+                renderer.sprite = which == 0 ? idleSide : (higherSpeed < 0) ? idleForward : idleBackward;
             }
         }
         else
@@ -72,11 +77,11 @@ public class MovePlayer : MonoBehaviour
                 }
                 if (walkNum == 0)
                 {
-                    renderer.sprite = which == 0 ? walkSide1 : walkForward1;
+                    renderer.sprite = which == 0 ? walkSide1 : (higherSpeed < 0) ? walkForward1 : walkBackward1;
                 }
                 else
                 {
-                    renderer.sprite = which == 0 ? walkSide2 : walkForward2;
+                    renderer.sprite = which == 0 ? walkSide2 : (higherSpeed < 0) ? walkForward2 : walkBackward2;
                 }           
         }
 

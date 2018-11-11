@@ -1737,10 +1737,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  idleForward: {fileID: 21300000, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
-  idleSide: {fileID: 21300006, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
-  walkForward1: {fileID: 21300002, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
-  walkForward2: {fileID: 21300004, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
-  walkSide1: {fileID: 21300008, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
-  walkSide2: {fileID: 21300010, guid: fdfe4ff934e0d7a4595438831293f288, type: 3}
+  idleForward: {fileID: 21300000, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  idleSide: {fileID: 21300006, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  idleBackward: {fileID: 21300012, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkForward1: {fileID: 21300002, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkForward2: {fileID: 21300004, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkSide1: {fileID: 21300008, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkSide2: {fileID: 21300010, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkBackward1: {fileID: 21300014, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
+  walkBackward2: {fileID: 21300016, guid: f7ad64055bb56994ab4233e343c07aad, type: 3}
   stepSpeed: 15
